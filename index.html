@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>オーブ爆取れルーレット乱数生成機</title>
+  <script>
+    function calculate() {
+      // 入力された数値を取得
+      let number = parseFloat(document.getElementById("number1").value);
+      let number2 = 0 
+
+      // 数字かどうかのチェック
+      if (isNaN(number)) {
+        document.getElementById("result").innerText = "有効な数値を入力してください。";
+        return;
+      }
+
+      // 乱数生成と獲得オーブポイントとの比較、あっていたらそれを返す
+      while (number !=number2) {
+        number2 = 0
+        var a = Math.floor(Math.random() *number);
+        var b = Math.floor(Math.random() *number);
+        var c = Math.floor(Math.random() *number);
+        var d = Math.floor(Math.random() *number);
+        var e = Math.floor(Math.random() *number);
+        var f = Math.floor(Math.random() *number);
+        var g = Math.floor(Math.random() *number);
+        var h = Math.floor(Math.random() *number);
+        number2 = a+b+c+d+e+f+g+h
+      }
+
+      // 結果を表示
+      document.getElementById("result").innerText = "オーブ爆取れルーレットの乱数が決まりました！\nA:" + a + "\nB:" + b + "\nC:" + c + "\nD:" + d + "\nE:" + e + "\nF:" + f + "\nG:" + g + "\nH:" + h;
+    }
+    
+  </script>
+</head>
+<body>
+  <h1>オーブ爆取れルーレット乱数生成機</h1>
+  <p>オーブ爆取れルーレットの数値をランダムで生成してくれます。</p>
+  <input type="number" id="number1" placeholder="獲得オーブポイント">
+  <button onclick="calculate()">生成</button>
+
+  <div id="result"></div>
+
+</body>
+</html>
